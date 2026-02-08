@@ -5,13 +5,14 @@ const comparePassword = require("../utils/comparePassword");
 const uploadToImageKit = require("../services/storage.service");
 const OTPGenerator = require("otp-generator");
 const twilio = require("twilio");
+let { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } = require("../config/env");
 
 const otpStore = new Map();
 
-const client = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN,
-);
+  const client = twilio(
+    TWILIO_ACCOUNT_SID,
+    TWILIO_AUTH_TOKEN,
+  );
 
 const sendOTPController = async (req, res) => {
   try {

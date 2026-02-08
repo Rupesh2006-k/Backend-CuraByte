@@ -1,9 +1,9 @@
-require("dotenv").config();
 const { GoogleGenAI } = require("@google/genai");
+let { GOOGLE_GEMINI_KEY } = require("../config/env");
 let promptInstruction = require("../utils/prompt");
 
 const ai = new GoogleGenAI({
-  apiKey: process.env.GOOGLE_GEMINI_KEY,
+  apiKey: GOOGLE_GEMINI_KEY,
 });
 
 async function generateContent(prompt) {

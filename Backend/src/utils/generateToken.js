@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
-
+let { JWT_SECRET } = require("../config/env");
 const generateToken = (userId) => {
   try {
     return jwt.sign(
       { id: userId },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       { expiresIn: "2h" }
     );
   } catch (error) {
