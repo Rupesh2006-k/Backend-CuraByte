@@ -1,0 +1,14 @@
+let env =[
+    'PORT',
+    'GOOGLE_GEMINI_KEY',
+    'JWT_SECRET',
+    'MONGO_URI',
+    'IMAGEKIT_PUBLIC_KEY',
+    'IMAGEKIT_PRIVATE_KEY',
+    'IMAGEKIT_URL',
+    'TWILIO_ACCOUNT_SID',
+    'TWILIO_AUTH_TOKEN',
+    'TWILIO_PHONE_NUMBER',
+]
+
+export default env
