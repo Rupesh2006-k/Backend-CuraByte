@@ -7,19 +7,23 @@ const reportSchema = new mongoose.Schema(
       ref: "user",
       required: true,
     },
-
-    report: {
+    reportName: {
       type: String,
+      required: true, 
+    },  
+
+    reportType: {
+      type: String,
+      enum: ["blood", "xray", "mri", "ct", "prescription", "other","Fever","health"],
       required: true,
     },
 
-    status: {
-      type: String,
-      enum: ["pending", "approved", "rejected"],
-      default: "pending",
+    aiAnalysis: {
+      type: String, 
+      default: "",
     },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("report", reportSchema);
